@@ -1,35 +1,35 @@
-    <h1>List of all Buildings</h1>
+<h1>List of all Buildings</h1>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Year build</th>
-          <th>Address</th>
-          <th>Structure type</th>
-          <th>Construction status</th>
-          <th>User</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Year build</th>
+      <th>Address</th>
+      <th>Structure type</th>
+      <th>Construction status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-      <tbody>
-        <% @buildings.each do |building| %>
-          <tr>
-            <td><%= building.name %></td>
-            <td><%= building.year_build %></td>
-            <td><%= building.address_id %></td>
-            <td><%= building.structure_type %></td>
-            <td><%= building.construction_status_id %></td>
-            <td><%= building.user %></td>
-            <td><%= link_to 'Show', building %></td>
-            <td><%= link_to 'Edit', edit_building_path(building) %></td>
-            <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <tbody>
+    <% @buildings.each do |building| %>
+    <tr>
+      <td><%= building.name %></td>
+      <td><%= building.year_build %></td>
+      <td><%= building.address_id %></td>
+      <td><%= building.structure_type %></td>
+      <td><%= building.construction_status_id %></td>
+      <td><%= building.user %></td>
+      <td><%= link_to 'Show', building %></td>
+      <td><%= link_to 'Edit', edit_building_path(building) %></td>
+      <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-    <br>
+<br>
 
-    <%= link_to 'New Building', new_building_path %>
+<%= link_to 'New Building', new_building_path %>

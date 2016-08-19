@@ -16,7 +16,8 @@ class BuildingsController < ApplicationController
 
   # GET /buildings/new
   def new
-    @building = Building.new
+    # @building = Building.new
+    @building = current_user.build_building
   end
 
   # GET /buildings/1/edit
@@ -26,7 +27,7 @@ class BuildingsController < ApplicationController
   # POST /buildings
   # POST /buildings.json
   def create
-    @building = Building.new(building_params)
+    @building = current_user.build_building(building_params)
 
     respond_to do |format|
       if @building.save
