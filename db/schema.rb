@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819135424) do
+ActiveRecord::Schema.define(version: 20160819140428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20160819135424) do
   end
 
   add_index "buildings", ["user_id"], name: "index_buildings_on_user_id", using: :btree
+
+  create_table "listings", force: :cascade do |t|
+    t.text     "desc"
+    t.integer  "building_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "listings", ["building_id"], name: "index_listings_on_building_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -75,4 +84,5 @@ ActiveRecord::Schema.define(version: 20160819135424) do
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   add_foreign_key "buildings", "users"
+  add_foreign_key "listings", "buildings"
 end
