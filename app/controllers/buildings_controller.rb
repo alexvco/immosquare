@@ -1,5 +1,7 @@
 class BuildingsController < ApplicationController
+  # before_action :set_user
   before_action :set_building, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /buildings
   # GET /buildings.json
@@ -63,6 +65,10 @@ class BuildingsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
     def set_building
       @building = Building.find(params[:id])
     end

@@ -2,12 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :year_build %>
+    <%= f.input :name, placeholder: 'Name' %>
+    <%= f.input :year_build, placeholder: '1987' %>
     <%= f.input :address_id %>
     <%= f.input :structure_type %>
     <%= f.input :construction_status_id %>
-    <%= f.association :user %>
   </div>
 
   <div class="form-actions">
