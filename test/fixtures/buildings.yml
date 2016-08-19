@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  year_build: 1
+  address_id: 1
+  structure_type: 1
+  construction_status_id: 1
+  user_id: 
+
+two:
+  name: MyString
+  year_build: 1
+  address_id: 1
+  structure_type: 1
+  construction_status_id: 1
+  user_id: 
